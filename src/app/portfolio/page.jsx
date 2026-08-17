@@ -194,7 +194,7 @@ const PortfolioPage = () => {
             }}
             className="text-6xl font-bold tracking-tight sm:text-7xl md:text-8xl"
           >
-            <span className="bg-gradient-to-r from-violet-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-violet-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent">
               My Works
             </span>
           </motion.h1>
@@ -212,7 +212,7 @@ const PortfolioPage = () => {
               delay: 0.9,
               duration: 0.6,
             }}
-            className="mt-7 h-1 rounded-full bg-gradient-to-r from-violet-600 via-indigo-500 to-cyan-400"
+            className="mt-7 h-1 rounded-full bg-linear-to-r from-violet-600 via-indigo-500 to-cyan-400"
           />
 
           {/* Scroll hint */}
@@ -233,7 +233,7 @@ const PortfolioPage = () => {
               Scroll
             </span>
 
-            <span className="h-10 w-[2px] rounded-full bg-gradient-to-b from-violet-500 to-cyan-400" />
+            <span className="h-10 w-0.5 rounded-full bg-linear-to-b from-violet-500 to-cyan-400" />
           </motion.div>
         </div>
 
@@ -268,7 +268,7 @@ const PortfolioPage = () => {
                   Selected
                   <br />
 
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+                  <span className="bg-linear-to-r from-violet-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
                     Projects
                   </span>
                 </h2>
@@ -302,7 +302,7 @@ const PortfolioPage = () => {
 
               return (
                 <div
-                  className={`relative flex h-screen w-screen shrink-0 items-center justify-center overflow-hidden bg-gradient-to-br ${accent.background} px-5 py-20 text-white sm:px-8 md:px-12 lg:px-16 xl:px-24`}
+                  className={`relative flex h-screen w-screen shrink-0 items-center justify-center overflow-hidden bg-linear-to-br ${accent.background} px-5 py-20 text-white sm:px-8 md:px-12 lg:px-16 xl:px-24`}
                   key={item.id}
                 >
 
@@ -322,7 +322,7 @@ const PortfolioPage = () => {
 
                   {/* Main project content */}
 
-                  <div className="relative z-10 grid w-full max-w-[1500px] items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16 xl:gap-24">
+                  <div className="relative z-10 grid w-full max-w-375 items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16 xl:gap-24">
 
                     {/* ==================== IMAGE ==================== */}
 
@@ -345,7 +345,7 @@ const PortfolioPage = () => {
                       className="order-2 md:order-1"
                     >
 
-                      <div className="group relative mx-auto w-full max-w-[650px]">
+                      <div className="group relative mx-auto w-full max-w-162.5">
 
                         {/* Glow */}
 
@@ -365,7 +365,7 @@ const PortfolioPage = () => {
 
                           {/* Image overlay */}
 
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60" />
+                          <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent opacity-60" />
 
                           {/* Preview label */}
 
@@ -413,7 +413,7 @@ const PortfolioPage = () => {
 
                       {/* Accent line */}
 
-                      <div className="mt-5 h-1 w-14 rounded-full bg-gradient-to-r from-white to-white/30" />
+                      <div className="mt-5 h-1 w-14 rounded-full bg-linear-to-r from-white to-white/30" />
 
                       {/* Description */}
 
@@ -492,7 +492,7 @@ const PortfolioPage = () => {
 
         {/* Background decoration */}
 
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/5 blur-3xl" />
 
         <div className="relative z-10">
 
@@ -536,7 +536,7 @@ const PortfolioPage = () => {
             className="mt-7 max-w-5xl text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
           >
             Have a{" "}
-            <span className="bg-gradient-to-r from-violet-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-violet-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent">
               project
             </span>{" "}
             in mind?
@@ -584,7 +584,7 @@ const PortfolioPage = () => {
               duration: 0.8,
               delay: 0.3,
             }}
-            className="relative mx-auto mt-12 h-64 w-64 sm:h-80 sm:w-80 md:h-[400px] md:w-[400px]"
+            className="relative mx-auto mt-12 h-64 w-64 sm:h-80 sm:w-80 md:h-100 md:w-100"
           >
 
             {/* Rotating text */}
@@ -626,13 +626,13 @@ const PortfolioPage = () => {
 
             {/* Center glow */}
 
-            <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-violet-600 via-indigo-500 to-cyan-400 opacity-20 blur-2xl" />
+            <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-r from-violet-600 via-indigo-500 to-cyan-400 opacity-20 blur-2xl" />
 
             {/* Contact button */}
 
             <Link
               href="/contact"
-              className="group absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-neutral-950 text-center text-xs font-semibold text-white shadow-xl transition-all duration-500 hover:scale-110 hover:bg-gradient-to-r hover:from-violet-600 hover:via-indigo-500 hover:to-cyan-400 hover:shadow-[0_15px_45px_rgba(124,58,237,0.3)] sm:h-24 sm:w-24 sm:text-sm md:h-28 md:w-28"
+              className="group absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-neutral-950 text-center text-xs font-semibold text-white shadow-xl transition-all duration-500 hover:scale-110 hover:bg-linear-to-r hover:from-violet-600 hover:via-indigo-500 hover:to-cyan-400 hover:shadow-[0_15px_45px_rgba(124,58,237,0.3)] sm:h-24 sm:w-24 sm:text-sm md:h-28 md:w-28"
             >
               <span className="transition-transform duration-300 group-hover:scale-105">
                 Contact Me
