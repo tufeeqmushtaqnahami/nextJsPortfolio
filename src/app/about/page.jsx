@@ -314,7 +314,7 @@ const AboutPage = () => {
 
                 <div className="relative rounded-full bg-gradient-to-br from-violet-600 via-indigo-500 to-cyan-400 p-[3px] shadow-[0_20px_60px_rgba(124,58,237,0.18)]">
                   <Image
-                    src="/profile1.png"
+                    src="/projects/profile1.png"
                     alt="Tufeeq Mushtaq"
                     width={140}
                     height={140}
