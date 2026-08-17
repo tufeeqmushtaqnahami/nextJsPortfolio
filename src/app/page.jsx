@@ -1,0 +1,526 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+const Homepage = () => {
+  return (
+    <motion.main
+      initial={{ y: "-100vh" }}
+      animate={{ y: "0%" }}
+      transition={{
+        duration: 0.9,
+        ease: "easeOut",
+      }}
+      className="relative h-[calc(100dvh-6rem)] overflow-hidden bg-white text-neutral-900"
+    >
+      {/* ==================== BACKGROUND GLOW ==================== */}
+
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* Violet glow */}
+        <div className="absolute -left-32 top-1/3 h-64 w-64 rounded-full bg-violet-500/[0.06] blur-3xl sm:h-80 sm:w-80" />
+
+        {/* Cyan glow */}
+        <div className="absolute -bottom-32 right-0 h-72 w-72 rounded-full bg-cyan-400/[0.06] blur-3xl sm:h-96 sm:w-96" />
+      </div>
+
+      {/* ==================== MAIN CONTAINER ==================== */}
+
+      <div
+        className="
+          relative mx-auto flex h-full w-full max-w-[1600px]
+          flex-col
+          px-5
+          sm:px-8
+          md:px-10
+          lg:flex-row
+          lg:items-center
+          lg:px-12
+          xl:px-20
+          2xl:px-28
+        "
+      >
+        {/* =====================================================
+            IMAGE SECTION
+        ====================================================== */}
+
+        <motion.section
+          initial={{
+            opacity: 0,
+            x: -50,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 0.8,
+            delay: 0.1,
+            ease: "easeOut",
+          }}
+          className="
+            flex h-[38%] w-full
+            items-center justify-center
+            lg:h-full lg:w-[42%]
+          "
+        >
+          {/* ==================== IMAGE WRAPPER ==================== */}
+
+          <motion.div
+            animate={{
+              y: [0, -6, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="
+  relative
+  h-[160px] w-[160px]
+  sm:h-[195px] sm:w-[195px]
+  md:h-[230px] md:w-[230px]
+  lg:h-[300px] lg:w-[300px]
+  xl:h-[360px] xl:w-[360px]
+  2xl:h-[400px] 2xl:w-[400px]
+"
+          >
+            {/* ==================== SOFT GLOW ==================== */}
+
+            <div
+              className="
+                absolute -inset-5
+                rounded-full
+                bg-gradient-to-r
+                from-violet-500/20
+                via-indigo-500/10
+                to-cyan-400/20
+                blur-3xl
+              "
+            />
+
+            {/* ==================== GRADIENT BORDER ==================== */}
+
+            <div
+              className="
+                absolute -inset-[3px]
+                rounded-full
+                bg-gradient-to-br
+                from-violet-600
+                via-indigo-500
+                to-cyan-400
+              "
+            />
+
+            {/* ==================== IMAGE ==================== */}
+
+            <div
+              className="
+                absolute inset-[4px]
+                overflow-hidden
+                rounded-full
+                border-[4px]
+                border-white
+                bg-white
+                shadow-[0_20px_55px_rgba(0,0,0,0.14)]
+              "
+            >
+              <Image
+                src="/profile1.png"
+                alt="Tufeeq Mushtaq"
+                fill
+                priority
+                sizes="
+                  (max-width: 640px) 145px,
+                  (max-width: 768px) 175px,
+                  (max-width: 1024px) 205px,
+                  (max-width: 1280px) 275px,
+                  (max-width: 1536px) 330px,
+                  370px
+                "
+                className="
+                  object-cover
+                  object-center
+                  transition-transform
+                  duration-700
+                  ease-out
+                  hover:scale-105
+                "
+              />
+            </div>
+
+            {/* ==================== VIOLET DOT ==================== */}
+
+            <motion.div
+              animate={{
+                y: [0, -6, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="
+                absolute
+                -left-2
+                top-1/4
+                h-2.5
+                w-2.5
+                rounded-full
+                bg-violet-500
+                shadow-[0_0_18px_rgba(124,58,237,0.6)]
+                sm:-left-3
+                sm:h-3
+                sm:w-3
+              "
+            />
+
+            {/* ==================== CYAN DOT ==================== */}
+
+            <motion.div
+              animate={{
+                y: [0, 6, 0],
+              }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="
+                absolute
+                -right-2
+                bottom-1/4
+                h-2.5
+                w-2.5
+                rounded-full
+                bg-cyan-400
+                shadow-[0_0_18px_rgba(6,182,212,0.6)]
+                sm:-right-3
+                sm:h-3
+                sm:w-3
+              "
+            />
+          </motion.div>
+        </motion.section>
+
+        {/* =====================================================
+            TEXT SECTION
+        ====================================================== */}
+
+        <motion.section
+          initial={{
+            opacity: 0,
+            x: 50,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 0.8,
+            delay: 0.25,
+            ease: "easeOut",
+          }}
+          className="
+            flex
+            h-[62%]
+            w-full
+            min-w-0
+            items-center
+            justify-center
+            text-center
+            lg:h-full
+            lg:w-[58%]
+            lg:justify-start
+            lg:pl-8
+            lg:text-left
+            xl:pl-12
+          "
+        >
+          <div className="w-full max-w-[620px] min-w-0">
+            {/* ==================== LABEL ==================== */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 12,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.45,
+                duration: 0.5,
+              }}
+              className="mb-3 sm:mb-4"
+            >
+              <span
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  rounded-full
+                  border
+                  border-violet-100
+                  bg-violet-50
+                  px-3
+                  py-1.5
+                  text-[9px]
+                  font-semibold
+                  uppercase
+                  tracking-[0.14em]
+                  text-violet-700
+                  sm:px-4
+                  sm:py-2
+                  sm:text-xs
+                "
+              >
+                <span className="h-2 w-2 animate-pulse rounded-full bg-violet-500" />
+                Welcome to my portfolio
+              </span>
+            </motion.div>
+
+            {/* ==================== TITLE ==================== */}
+
+            <motion.h1
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.55,
+                duration: 0.7,
+              }}
+              className="
+                text-[2rem]
+                font-extrabold
+                leading-[1.04]
+                tracking-tight
+                sm:text-[2.5rem]
+                md:text-[3rem]
+                lg:text-[3.1rem]
+                xl:text-[3.7rem]
+                2xl:text-[4.1rem]
+              "
+            >
+              Hi, I&apos;m{" "}
+              <span
+                className="
+                  bg-gradient-to-r
+                  from-violet-600
+                  via-indigo-500
+                  to-cyan-500
+                  bg-clip-text
+                  text-transparent
+                "
+              >
+                Tufeeq Mushtaq.
+              </span>
+              <br />
+              <span className="text-neutral-900">I Build for the Web.</span>
+            </motion.h1>
+
+            {/* ==================== ROLE ==================== */}
+
+            <motion.p
+              initial={{
+                opacity: 0,
+                y: 12,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.75,
+                duration: 0.5,
+              }}
+              className="
+                mt-3
+                text-[11px]
+                font-semibold
+                leading-5
+                text-neutral-700
+                sm:text-sm
+                md:text-base
+                lg:mt-4
+                lg:text-base
+                xl:text-lg
+              "
+            >
+              <span>Frontend Developer</span>
+
+              <span className="mx-1.5 text-violet-500 sm:mx-2">|</span>
+
+              <span>React</span>
+
+              <span className="mx-1.5 text-indigo-500 sm:mx-2">|</span>
+
+              <span>Next.js</span>
+
+              <span className="mx-1.5 text-cyan-500 sm:mx-2">|</span>
+
+              <span>JavaScript</span>
+            </motion.p>
+
+            {/* ==================== DESCRIPTION ==================== */}
+
+            <motion.p
+              initial={{
+                opacity: 0,
+                y: 12,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.9,
+                duration: 0.6,
+              }}
+              className="
+                mx-auto
+                mt-3
+                max-w-[570px]
+                text-[11px]
+                leading-5
+                text-neutral-500
+                sm:text-sm
+                sm:leading-6
+                md:text-base
+                md:leading-7
+                lg:mx-0
+                lg:mt-4
+                lg:text-[15px]
+                xl:text-base
+              "
+            >
+              I am a B.Sc. IT graduate and Web Developer with a strong focus on
+              building modern, responsive, and user-friendly web applications.
+              Passionate about problem-solving and clean code, I specialize in
+              the modern JavaScript ecosystem, specifically utilizing React,
+              Next.js, and Tailwind CSS to deliver seamless digital experiences.
+            </motion.p>
+
+            {/* ==================== BUTTONS ==================== */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 12,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 1.05,
+                duration: 0.6,
+              }}
+              className="
+                mt-5
+                flex
+                items-center
+                justify-center
+                gap-3
+                sm:mt-6
+                lg:justify-start
+              "
+            >
+              {/* ==================== VIEW MY WORK ==================== */}
+
+              <Link
+                href="/portfolio"
+                className="
+                  group
+                  relative
+                  overflow-hidden
+                  rounded-xl
+                  bg-neutral-950
+                  px-4
+                  py-2.5
+                  text-xs
+                  font-semibold
+                  text-white
+                  shadow-lg
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:shadow-[0_12px_30px_rgba(124,58,237,0.25)]
+                  sm:px-5
+                  sm:py-3
+                  sm:text-sm
+                "
+              >
+                <span
+                  className="
+                    absolute
+                    inset-0
+                    -translate-x-full
+                    bg-gradient-to-r
+                    from-violet-600
+                    via-indigo-500
+                    to-cyan-400
+                    transition-transform
+                    duration-500
+                    group-hover:translate-x-0
+                  "
+                />
+
+                <span className="relative z-10 flex items-center gap-2">
+                  View My Work
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </span>
+              </Link>
+
+              {/* ==================== DOWNLOAD RESUME ==================== */}
+
+              <a
+                href="/projects/Tufeeq_Mushtaq_Resume.pdf"
+                download
+                className="
+                  group
+                  rounded-xl
+                  border
+                  border-violet-200
+                  bg-violet-50
+                  px-4
+                  py-2.5
+                  text-xs
+                  font-semibold
+                  text-violet-700
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:border-violet-300
+                  hover:bg-violet-100
+                  hover:shadow-[0_10px_25px_rgba(124,58,237,0.12)]
+                  sm:px-5
+                  sm:py-3
+                  sm:text-sm
+                "
+              >
+                <span className="flex items-center gap-2">
+                  Download Resume
+                  <span className="transition-transform duration-300 group-hover:translate-y-1">
+                    ↓
+                  </span>
+                </span>
+              </a>
+            </motion.div>
+          </div>
+        </motion.section>
+      </div>
+    </motion.main>
+  );
+};
+
+export default Homepage;
