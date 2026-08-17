@@ -35,7 +35,11 @@ const ContactPage = () => {
             form.current.reset();
           }
         },
-        () => {
+        (error) => {
+          console.error("EMAILJS ERROR:", error);
+          console.error("STATUS:", error?.status);
+          console.error("TEXT:", error?.text);
+
           setError(true);
           setSending(false);
         }
@@ -166,9 +170,11 @@ const ContactPage = () => {
                 <div className="mb-1.5 flex h-7 w-7 items-center justify-center rounded-lg bg-violet-50 text-sm transition-transform duration-300 group-hover:scale-110 sm:mb-2 sm:h-9 sm:w-9 sm:text-base">
                   💻
                 </div>
+
                 <p className="text-[10px] font-bold text-slate-900 sm:text-xs">
                   Web Developer
                 </p>
+
                 <p className="mt-0.5 text-[8px] leading-3.5 text-slate-500 sm:text-[10px] sm:leading-4">
                   Modern & responsive web experiences.
                 </p>
@@ -179,9 +185,11 @@ const ContactPage = () => {
                 <div className="mb-1.5 flex h-7 w-7 items-center justify-center rounded-lg bg-cyan-50 text-sm transition-transform duration-300 group-hover:scale-110 sm:mb-2 sm:h-9 sm:w-9 sm:text-base">
                   🚀
                 </div>
+
                 <p className="text-[10px] font-bold text-slate-900 sm:text-xs">
                   Open to Ideas
                 </p>
+
                 <p className="mt-0.5 text-[8px] leading-3.5 text-slate-500 sm:text-[10px] sm:leading-4">
                   Always interested in learning and building.
                 </p>
@@ -193,6 +201,7 @@ const ContactPage = () => {
               <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
               <span className="h-1.5 w-1.5 rounded-full bg-indigo-500" />
               <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+
               <span className="ml-2 text-[9px] font-medium uppercase tracking-[0.2em] text-slate-400">
                 Let&apos;s connect
               </span>
@@ -214,6 +223,7 @@ const ContactPage = () => {
             >
               {/* Form glows */}
               <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-violet-500/[0.07] blur-3xl" />
+
               <div className="pointer-events-none absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-cyan-400/[0.06] blur-3xl" />
 
               {/* Top gradient */}
@@ -225,9 +235,11 @@ const ContactPage = () => {
                   <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-violet-600 sm:text-[10px]">
                     Contact
                   </p>
+
                   <h2 className="mt-1 text-xl font-bold tracking-tight text-slate-900 sm:text-2xl md:text-3xl">
                     Let&apos;s talk.
                   </h2>
+
                   <p className="mt-1 text-[10px] leading-4 text-slate-500 sm:text-xs sm:leading-5">
                     Tell me a little about your idea or project.
                   </p>
@@ -236,10 +248,15 @@ const ContactPage = () => {
                 {/* =================================================
                     NAME
                 ================================================== */}
+
                 <div className="mb-3.5 sm:mb-4">
-                  <label htmlFor="user_name" className="mb-1.5 block text-[10px] font-semibold text-slate-800 sm:text-xs">
+                  <label
+                    htmlFor="user_name"
+                    className="mb-1.5 block text-[10px] font-semibold text-slate-800 sm:text-xs"
+                  >
                     Your name
                   </label>
+
                   <input
                     id="user_name"
                     name="user_name"
@@ -254,10 +271,15 @@ const ContactPage = () => {
                 {/* =================================================
                     EMAIL
                 ================================================== */}
+
                 <div className="mb-3.5 sm:mb-4">
-                  <label htmlFor="user_email" className="mb-1.5 block text-[10px] font-semibold text-slate-800 sm:text-xs">
+                  <label
+                    htmlFor="user_email"
+                    className="mb-1.5 block text-[10px] font-semibold text-slate-800 sm:text-xs"
+                  >
                     Email address
                   </label>
+
                   <input
                     id="user_email"
                     name="user_email"
@@ -272,10 +294,15 @@ const ContactPage = () => {
                 {/* =================================================
                     MESSAGE
                 ================================================== */}
+
                 <div className="mb-3.5 sm:mb-4">
-                  <label htmlFor="user_message" className="mb-1.5 block text-[10px] font-semibold text-slate-800 sm:text-xs">
+                  <label
+                    htmlFor="user_message"
+                    className="mb-1.5 block text-[10px] font-semibold text-slate-800 sm:text-xs"
+                  >
                     Your message
                   </label>
+
                   <textarea
                     id="user_message"
                     name="user_message"
@@ -289,11 +316,13 @@ const ContactPage = () => {
                 {/* =================================================
                     SIGNATURE
                 ================================================== */}
+
                 <div className="mb-4 flex items-center justify-between border-t border-slate-100 pt-3 sm:mb-5 sm:pt-4">
                   <div>
                     <p className="text-[9px] text-slate-400 sm:text-[10px]">
                       Regards,
                     </p>
+
                     <p className="mt-0.5 text-[10px] font-semibold text-slate-800 sm:text-xs">
                       Tufeeq Mushtaq
                     </p>
@@ -309,6 +338,7 @@ const ContactPage = () => {
                 {/* =================================================
                     SEND BUTTON
                 ================================================== */}
+
                 <motion.button
                   type="submit"
                   disabled={sending}
@@ -328,6 +358,7 @@ const ContactPage = () => {
                     ) : (
                       <>
                         Send Message
+
                         <span className="text-base transition-transform duration-300 group-hover:translate-x-1">
                           →
                         </span>
@@ -339,6 +370,7 @@ const ContactPage = () => {
                 {/* =================================================
                     SUCCESS
                 ================================================== */}
+
                 {success && (
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
@@ -352,6 +384,7 @@ const ContactPage = () => {
                 {/* =================================================
                     ERROR
                 ================================================== */}
+
                 {error && (
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
