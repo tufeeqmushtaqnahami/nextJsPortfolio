@@ -12,29 +12,23 @@ const NavLink = ({ link }) => {
   return (
     <Link
       href={link.url}
-      className="group relative px-1 py-2 text-sm font-medium tracking-wide text-neutral-700 transition-colors duration-300 hover:text-violet-600 lg:text-base"
+      className="group relative px-1 py-2 text-sm font-medium tracking-wide text-slate-700 transition-colors duration-300 hover:text-teal-700 lg:text-base"
     >
-      {/* Text */}
-      <span className="relative z-10">
-        {link.title}
-      </span>
+      <span className="relative z-10">{link.title}</span>
 
-      {/* Animated underline */}
       <motion.span
         initial={false}
         animate={{
           width: isActive ? "100%" : "0%",
         }}
-        className="absolute bottom-0 left-0 h-[2px] rounded-full bg-gradient-to-r from-violet-600 via-indigo-500 to-cyan-400"
+        className="absolute bottom-0 left-0 h-0.5 rounded-full bg-linear-to-r from-slate-700 via-slate-600 to-teal-600"
       />
 
-      {/* Hover underline */}
       {!isActive && (
-        <span className="absolute bottom-0 left-0 h-[2px] w-0 rounded-full bg-gradient-to-r from-violet-600 via-indigo-500 to-cyan-400 transition-all duration-300 group-hover:w-full" />
+        <span className="absolute bottom-0 left-0 h-0.5 w-0 rounded-full bg-linear-to-r from-slate-700 via-slate-600 to-teal-600 transition-all duration-300 group-hover:w-full" />
       )}
 
-      {/* Small glow */}
-      <span className="absolute inset-0 -z-10 rounded-lg bg-gradient-to-r from-violet-500/0 via-indigo-500/0 to-cyan-400/0 blur-xl transition-all duration-300 group-hover:from-violet-500/10 group-hover:via-indigo-500/10 group-hover:to-cyan-400/10" />
+      <span className="absolute inset-0 -z-10 rounded-lg bg-linear-to-r from-slate-500/0 via-slate-500/0 to-teal-500/0 blur-xl transition-all duration-300 group-hover:from-slate-500/10 group-hover:via-slate-500/10 group-hover:to-teal-500/10" />
     </Link>
   );
 };

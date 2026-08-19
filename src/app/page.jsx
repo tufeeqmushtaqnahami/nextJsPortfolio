@@ -13,16 +13,35 @@ const Homepage = () => {
         duration: 0.9,
         ease: "easeOut",
       }}
-      className="relative h-[calc(100dvh-6rem)] overflow-hidden bg-white text-neutral-900"
+      className="relative h-[calc(100dvh-6rem)] overflow-hidden bg-slate-50 text-slate-900"
     >
+      {/* ==================== BACKGROUND ==================== */}
+
+      <div className="pointer-events-none absolute inset-0 overflow-hidden bg-[radial-gradient(circle_at_15%_25%,rgba(15,118,110,0.06),transparent_28%),radial-gradient(circle_at_85%_75%,rgba(51,65,85,0.06),transparent_30%)]" />
+
+      {/* Subtle grid */}
+
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(15,23,42,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.5) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+          maskImage:
+            "linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)",
+        }}
+      />
+
       {/* ==================== BACKGROUND GLOW ==================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Violet glow */}
-        <div className="absolute -left-32 top-1/3 h-64 w-64 rounded-full bg-violet-500/[0.06] blur-3xl sm:h-80 sm:w-80" />
+        {/* Slate glow */}
 
-        {/* Cyan glow */}
-        <div className="absolute -bottom-32 right-0 h-72 w-72 rounded-full bg-cyan-400/[0.06] blur-3xl sm:h-96 sm:w-96" />
+        <div className="absolute -left-32 top-1/3 h-64 w-64 rounded-full bg-slate-500/[0.05] blur-3xl sm:h-80 sm:w-80" />
+
+        {/* Teal glow */}
+
+        <div className="absolute -bottom-32 right-0 h-72 w-72 rounded-full bg-teal-500/[0.05] blur-3xl sm:h-96 sm:w-96" />
       </div>
 
       {/* ==================== MAIN CONTAINER ==================== */}
@@ -60,11 +79,11 @@ const Homepage = () => {
             ease: "easeOut",
           }}
           className="
-  flex h-auto w-full
-  items-center justify-center
-  pt-8
-  lg:h-full lg:w-[42%] lg:pt-0
-"
+            flex h-auto w-full
+            items-center justify-center
+            pt-8
+            lg:h-full lg:w-[42%] lg:pt-0
+          "
         >
           {/* ==================== IMAGE WRAPPER ==================== */}
 
@@ -77,15 +96,15 @@ const Homepage = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-           className="
-  relative
-  h-[230px] w-[230px]
-  sm:h-[260px] sm:w-[260px]
-  md:h-[290px] md:w-[290px]
-  lg:h-[340px] lg:w-[340px]
-  xl:h-[400px] xl:w-[400px]
-  2xl:h-[440px] 2xl:w-[440px]
-"
+            className="
+              relative
+              h-[230px] w-[230px]
+              sm:h-[260px] sm:w-[260px]
+              md:h-[290px] md:w-[290px]
+              lg:h-[340px] lg:w-[340px]
+              xl:h-[400px] xl:w-[400px]
+              2xl:h-[440px] 2xl:w-[440px]
+            "
           >
             {/* ==================== SOFT GLOW ==================== */}
 
@@ -94,9 +113,9 @@ const Homepage = () => {
                 absolute -inset-5
                 rounded-full
                 bg-gradient-to-r
-                from-violet-500/20
-                via-indigo-500/10
-                to-cyan-400/20
+                from-slate-500/15
+                via-slate-400/10
+                to-teal-400/15
                 blur-3xl
               "
             />
@@ -108,9 +127,9 @@ const Homepage = () => {
                 absolute -inset-[3px]
                 rounded-full
                 bg-gradient-to-br
-                from-violet-600
-                via-indigo-500
-                to-cyan-400
+                from-slate-700
+                via-slate-800
+                to-teal-600
               "
             />
 
@@ -124,7 +143,7 @@ const Homepage = () => {
                 border-[4px]
                 border-white
                 bg-white
-                shadow-[0_20px_55px_rgba(0,0,0,0.14)]
+                shadow-[0_20px_55px_rgba(15,23,42,0.14)]
               "
             >
               <Image
@@ -151,7 +170,7 @@ const Homepage = () => {
               />
             </div>
 
-            {/* ==================== VIOLET DOT ==================== */}
+            {/* ==================== TEAL DOT ==================== */}
 
             <motion.div
               animate={{
@@ -169,15 +188,15 @@ const Homepage = () => {
                 h-2.5
                 w-2.5
                 rounded-full
-                bg-violet-500
-                shadow-[0_0_18px_rgba(124,58,237,0.6)]
+                bg-teal-600
+                shadow-[0_0_18px_rgba(15,118,110,0.55)]
                 sm:-left-3
                 sm:h-3
                 sm:w-3
               "
             />
 
-            {/* ==================== CYAN DOT ==================== */}
+            {/* ==================== SLATE DOT ==================== */}
 
             <motion.div
               animate={{
@@ -195,8 +214,8 @@ const Homepage = () => {
                 h-2.5
                 w-2.5
                 rounded-full
-                bg-cyan-400
-                shadow-[0_0_18px_rgba(6,182,212,0.6)]
+                bg-slate-500
+                shadow-[0_0_18px_rgba(71,85,105,0.45)]
                 sm:-right-3
                 sm:h-3
                 sm:w-3
@@ -240,6 +259,7 @@ const Homepage = () => {
           "
         >
           <div className="w-full max-w-[620px] min-w-0">
+
             {/* ==================== LABEL ==================== */}
 
             <motion.div
@@ -264,21 +284,22 @@ const Homepage = () => {
                   gap-2
                   rounded-full
                   border
-                  border-violet-100
-                  bg-violet-50
+                  border-slate-200
+                  bg-slate-100
                   px-3
                   py-1.5
                   text-[9px]
                   font-semibold
                   uppercase
                   tracking-[0.14em]
-                  text-violet-700
+                  text-slate-700
                   sm:px-4
                   sm:py-2
                   sm:text-xs
                 "
               >
-                <span className="h-2 w-2 animate-pulse rounded-full bg-violet-500" />
+                <span className="h-2 w-2 animate-pulse rounded-full bg-teal-600" />
+
                 Welcome to my portfolio
               </span>
             </motion.div>
@@ -314,17 +335,21 @@ const Homepage = () => {
               <span
                 className="
                   bg-gradient-to-r
-                  from-violet-600
-                  via-indigo-500
-                  to-cyan-500
+                  from-slate-700
+                  via-slate-800
+                  to-teal-600
                   bg-clip-text
                   text-transparent
                 "
               >
                 Tufeeq Mushtaq.
               </span>
+
               <br />
-              <span className="text-neutral-900">I Build for the Web.</span>
+
+              <span className="text-slate-900">
+                I Build for the Web.
+              </span>
             </motion.h1>
 
             {/* ==================== ROLE ==================== */}
@@ -347,7 +372,7 @@ const Homepage = () => {
                 text-[11px]
                 font-semibold
                 leading-5
-                text-neutral-700
+                text-slate-700
                 sm:text-sm
                 md:text-base
                 lg:mt-4
@@ -357,15 +382,21 @@ const Homepage = () => {
             >
               <span>Frontend Developer</span>
 
-              <span className="mx-1.5 text-violet-500 sm:mx-2">|</span>
+              <span className="mx-1.5 text-teal-700 sm:mx-2">
+                |
+              </span>
 
               <span>React</span>
 
-              <span className="mx-1.5 text-indigo-500 sm:mx-2">|</span>
+              <span className="mx-1.5 text-slate-500 sm:mx-2">
+                |
+              </span>
 
               <span>Next.js</span>
 
-              <span className="mx-1.5 text-cyan-500 sm:mx-2">|</span>
+              <span className="mx-1.5 text-teal-600 sm:mx-2">
+                |
+              </span>
 
               <span>JavaScript</span>
             </motion.p>
@@ -391,7 +422,7 @@ const Homepage = () => {
                 max-w-[570px]
                 text-[11px]
                 leading-5
-                text-neutral-500
+                text-slate-500
                 sm:text-sm
                 sm:leading-6
                 md:text-base
@@ -443,7 +474,7 @@ const Homepage = () => {
                   relative
                   overflow-hidden
                   rounded-xl
-                  bg-neutral-950
+                  bg-slate-950
                   px-4
                   py-2.5
                   text-xs
@@ -453,7 +484,7 @@ const Homepage = () => {
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:shadow-[0_12px_30px_rgba(124,58,237,0.25)]
+                  hover:shadow-[0_12px_30px_rgba(15,118,110,0.22)]
                   sm:px-5
                   sm:py-3
                   sm:text-sm
@@ -465,9 +496,9 @@ const Homepage = () => {
                     inset-0
                     -translate-x-full
                     bg-gradient-to-r
-                    from-violet-600
-                    via-indigo-500
-                    to-cyan-400
+                    from-slate-700
+                    via-slate-800
+                    to-teal-600
                     transition-transform
                     duration-500
                     group-hover:translate-x-0
@@ -492,19 +523,20 @@ const Homepage = () => {
                   group
                   rounded-xl
                   border
-                  border-violet-200
-                  bg-violet-50
+                  border-slate-200
+                  bg-slate-100
                   px-4
                   py-2.5
                   text-xs
                   font-semibold
-                  text-violet-700
+                  text-slate-700
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:border-violet-300
-                  hover:bg-violet-100
-                  hover:shadow-[0_10px_25px_rgba(124,58,237,0.12)]
+                  hover:border-teal-300
+                  hover:bg-teal-50
+                  hover:text-teal-700
+                  hover:shadow-[0_10px_25px_rgba(15,118,110,0.10)]
                   sm:px-5
                   sm:py-3
                   sm:text-sm
