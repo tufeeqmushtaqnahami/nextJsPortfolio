@@ -91,11 +91,11 @@ const PortfolioPage = () => {
     target: ref,
   });
 
- const x = useTransform(
-  scrollYProgress,
-  [0.16, 1],
-  ["0%", `-${(items.length * 100) / (items.length + 1)}%`]
-);
+  const x = useTransform(
+    scrollYProgress,
+    [0.16, 1],
+    ["0%", `-${(items.length * 100) / (items.length + 1)}%`]
+  );
 
   return (
     <motion.main
@@ -111,9 +111,10 @@ const PortfolioPage = () => {
           PROJECT SECTION
       ====================================================== */}
 
+      {/* Added max-md:!h-auto to override the inline height style on mobile */}
       <section
         ref={ref}
-        className="relative"
+        className="relative max-md:!h-auto"
         style={{
           height: `${(items.length + 1) * 100}dvh`,
         }}
@@ -124,18 +125,9 @@ const PortfolioPage = () => {
 
         <div className="flex h-[calc(100dvh-5rem)] min-h-[520px] w-screen flex-col items-center justify-center px-5 text-center sm:px-6">
           <motion.div
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.2,
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-3 sm:mb-5"
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-700 sm:px-4 sm:py-2 sm:text-xs">
@@ -145,36 +137,18 @@ const PortfolioPage = () => {
           </motion.div>
 
           <motion.p
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.3,
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="mb-3 text-sm text-neutral-500 sm:mb-4 sm:text-base md:text-lg"
           >
             A collection of things I&apos;ve built
           </motion.p>
 
           <motion.h1
-            initial={{
-              opacity: 0,
-              y: 40,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.8,
-              delay: 0.4,
-            }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
           >
             <span className="bg-gradient-to-r from-slate-700 via-slate-800 to-teal-600 bg-clip-text text-transparent">
@@ -183,24 +157,14 @@ const PortfolioPage = () => {
           </motion.h1>
 
           <motion.div
-            initial={{
-              width: 0,
-            }}
-            animate={{
-              width: 80,
-            }}
-            transition={{
-              delay: 0.9,
-              duration: 0.6,
-            }}
+            initial={{ width: 0 }}
+            animate={{ width: 80 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
             className="mt-5 h-1 rounded-full bg-gradient-to-r from-slate-700 to-teal-600 sm:mt-7"
           />
 
           <motion.div
-            animate={{
-              y: [0, 8, 0],
-              opacity: [0.4, 1, 0.4],
-            }}
+            animate={{ y: [0, 8, 0], opacity: [0.4, 1, 0.4] }}
             transition={{
               repeat: Infinity,
               duration: 2.5,
@@ -211,7 +175,6 @@ const PortfolioPage = () => {
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-400">
               Scroll
             </span>
-
             <span className="h-10 w-0.5 rounded-full bg-gradient-to-b from-slate-600 to-teal-500" />
           </motion.div>
         </div>
@@ -220,32 +183,35 @@ const PortfolioPage = () => {
             PROJECT PROGRESS
         ================================================== */}
 
-        <div className="pointer-events-none absolute left-1/2 top-[calc(100dvh-5.5rem)] z-30 hidden -translate-x-1/2 items-center gap-3 sm:flex">
+        {/* Changed hidden sm:flex to hidden md:flex so it only shows on laptop */}
+        <div className="pointer-events-none absolute left-1/2 top-[calc(100dvh-5.5rem)] z-30 hidden -translate-x-1/2 items-center gap-3 md:flex">
           <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-neutral-400">
             Selected work
           </span>
-
           <div className="h-px w-16 bg-gradient-to-r from-slate-600 to-teal-500" />
-
           <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-neutral-400">
             {String(items.length).padStart(2, "0")} projects
           </span>
         </div>
 
         {/* =================================================
-            HORIZONTAL SCROLL
+            SCROLL CONTAINER (Vertical Mobile / Horizontal Desktop)
         ================================================== */}
 
-        <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-          <motion.div style={{ x }} className="flex">
-
+        {/* Disabled sticky and h-screen on mobile so it flows normally */}
+        <div className="max-md:relative md:sticky md:top-0 flex max-md:h-auto md:h-screen items-center md:overflow-hidden">
+          
+          {/* Changed flex row to flex column on mobile, and disabled the X transform using CSS! */}
+          <motion.div
+            style={{ x }}
+            className="flex max-md:w-full max-md:flex-col max-md:!transform-none"
+          >
             {/* =================================================
                 PROJECT INTRO
             ================================================== */}
 
-            <div className="relative flex h-screen w-screen shrink-0 items-center justify-center overflow-hidden bg-slate-950 px-5 text-white sm:px-6">
+            <div className="relative flex min-h-[100dvh] md:h-screen w-screen shrink-0 items-center justify-center overflow-hidden bg-slate-950 px-5 text-white sm:px-6">
               <div className="absolute -left-20 top-20 h-80 w-80 rounded-full bg-slate-500/15 blur-3xl" />
-
               <div className="absolute -bottom-20 right-0 h-96 w-96 rounded-full bg-teal-500/10 blur-3xl" />
 
               <div className="relative z-10 text-center">
@@ -256,26 +222,34 @@ const PortfolioPage = () => {
                 <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-7xl lg:text-8xl">
                   Selected
                   <br />
-
                   <span className="bg-gradient-to-r from-slate-300 via-slate-200 to-teal-300 bg-clip-text text-transparent">
                     Projects
                   </span>
                 </h2>
 
                 <p className="mt-5 text-sm text-neutral-400 sm:mt-6 sm:text-lg">
-                  Scroll horizontally to explore my work
+                  Scroll down to explore my work
                 </p>
 
                 <motion.div
-                  animate={{
-                    x: [0, 10, 0],
-                  }}
+                  animate={{ y: [0, 10, 0] }}
                   transition={{
                     repeat: Infinity,
                     duration: 1.8,
                     ease: "easeInOut",
                   }}
-                  className="mt-8 text-3xl text-teal-300 sm:mt-10"
+                  className="mt-8 flex justify-center text-3xl text-teal-300 sm:mt-10 md:hidden"
+                >
+                  ↓
+                </motion.div>
+                <motion.div
+                  animate={{ x: [0, 10, 0] }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 1.8,
+                    ease: "easeInOut",
+                  }}
+                  className="mt-8 hidden text-3xl text-teal-300 sm:mt-10 md:block"
                 >
                   →
                 </motion.div>
@@ -292,18 +266,15 @@ const PortfolioPage = () => {
               return (
                 <div
                   key={item.id}
-                  className={`relative flex h-dvh min-h-[620px] w-screen shrink-0 items-center justify-center overflow-hidden bg-gradient-to-br ${accent.background} px-4 py-10 text-white sm:px-6 sm:py-14 md:min-h-0 md:px-12 md:py-20 lg:px-16 xl:px-24`}
+                  className={`relative flex min-h-[100dvh] md:h-dvh w-screen shrink-0 items-center justify-center overflow-hidden bg-gradient-to-br ${accent.background} px-4 py-16 text-white sm:px-6 sm:py-20 md:min-h-0 md:px-12 md:py-20 lg:px-16 xl:px-24`}
                 >
                   {/* Background glow */}
-
                   <div
                     className={`absolute -right-32 -top-32 h-96 w-96 rounded-full ${accent.glow} blur-3xl`}
                   />
-
                   <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
 
                   {/* Background grid */}
-
                   <div
                     className="pointer-events-none absolute inset-0 opacity-[0.08]"
                     style={{
@@ -316,43 +287,24 @@ const PortfolioPage = () => {
                   />
 
                   {/* Project number */}
-
-                  <span className="absolute left-4 top-20 text-6xl font-bold text-white/5 sm:left-8 sm:top-24 sm:text-8xl md:left-16 lg:text-9xl">
+                  <span className="absolute left-4 top-16 text-6xl font-bold text-white/5 sm:left-8 sm:top-20 sm:text-8xl md:left-16 lg:text-9xl">
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  {/* =================================================
-                      CONTENT
-                  ================================================== */}
-
-                  <div className="relative z-10 flex w-full max-w-[1500px] flex-col items-center justify-center gap-5 md:grid md:grid-cols-2 md:gap-12 lg:gap-16 xl:gap-24">
-
+                  {/* CONTENT */}
+                  <div className="relative z-10 flex w-full max-w-[1500px] flex-col items-center justify-center gap-8 md:grid md:grid-cols-2 md:gap-12 lg:gap-16 xl:gap-24">
                     {/* IMAGE */}
-
                     <motion.div
-                      initial={{
-                        opacity: 0,
-                        x: -60,
-                      }}
-                      whileInView={{
-                        opacity: 1,
-                        x: 0,
-                      }}
-                      viewport={{
-                        once: false,
-                        amount: 0.3,
-                      }}
-                      transition={{
-                        duration: 0.7,
-                      }}
-                      className="order-2 w-full md:order-1"
+                      initial={{ opacity: 0, x: -60 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                      transition={{ duration: 0.7 }}
+                      className="order-1 w-full md:order-1"
                     >
                       <div className="group relative mx-auto w-full max-w-[94vw] sm:max-w-[720px] md:max-w-[650px] lg:max-w-[700px]">
-
                         <div
                           className={`absolute -inset-4 rounded-3xl ${accent.glow} opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100`}
                         />
-
                         <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/15 bg-black/20 shadow-2xl backdrop-blur-sm transition-all duration-500 group-hover:border-white/30 sm:aspect-video sm:rounded-3xl">
                           <Image
                             src={item.img}
@@ -361,9 +313,7 @@ const PortfolioPage = () => {
                             sizes="(max-width: 640px) 94vw, (max-width: 1024px) 78vw, 48vw"
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                           />
-
                           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60" />
-
                           <div className="absolute bottom-3 left-3 rounded-full border border-white/20 bg-black/30 px-3 py-1.5 text-[10px] font-medium text-white backdrop-blur-md sm:bottom-4 sm:left-4 sm:text-xs">
                             Project Preview
                           </div>
@@ -372,25 +322,12 @@ const PortfolioPage = () => {
                     </motion.div>
 
                     {/* PROJECT DETAILS */}
-
                     <motion.div
-                      initial={{
-                        opacity: 0,
-                        x: 60,
-                      }}
-                      whileInView={{
-                        opacity: 1,
-                        x: 0,
-                      }}
-                      viewport={{
-                        once: false,
-                        amount: 0.3,
-                      }}
-                      transition={{
-                        duration: 0.7,
-                        delay: 0.1,
-                      }}
-                      className="order-1 w-full text-center md:order-2 md:max-w-xl md:text-left"
+                      initial={{ opacity: 0, x: 60 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                      transition={{ duration: 0.7, delay: 0.1 }}
+                      className="order-2 w-full text-center md:order-2 md:max-w-xl md:text-left"
                     >
                       <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-white/50 sm:mb-3 sm:text-xs">
                         Project {String(index + 1).padStart(2, "0")}
@@ -407,7 +344,6 @@ const PortfolioPage = () => {
                       </p>
 
                       {/* TECHNOLOGIES */}
-
                       <p className="mt-5 text-[10px] font-bold uppercase tracking-[0.22em] text-white/45 md:mt-7 md:text-xs">
                         Built with
                       </p>
@@ -424,9 +360,7 @@ const PortfolioPage = () => {
                       </div>
 
                       {/* BUTTONS */}
-
                       <div className="mt-5 flex flex-wrap justify-center gap-3 md:mt-8 md:justify-start">
-
                         <Link
                           href={item.link}
                           target="_blank"
@@ -435,7 +369,6 @@ const PortfolioPage = () => {
                           className="group/button inline-flex min-h-11 items-center gap-3 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
                         >
                           <span>Live Demo</span>
-
                           <span className="transition-transform duration-300 group-hover/button:translate-x-1">
                             ↗
                           </span>
@@ -449,7 +382,6 @@ const PortfolioPage = () => {
                           className="group/github inline-flex min-h-11 items-center gap-3 rounded-xl border border-white/25 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/50 hover:bg-white/20"
                         >
                           <span>GitHub</span>
-
                           <span className="transition-transform duration-300 group-hover/github:translate-x-1">
                             ↗
                           </span>
@@ -467,46 +399,23 @@ const PortfolioPage = () => {
       {/* =====================================================
           CONTACT CTA
       ====================================================== */}
-
       <section className="relative flex min-h-screen w-screen flex-col items-center justify-center overflow-hidden bg-slate-50 px-5 py-20 text-center sm:px-6 sm:py-24">
-
+        {/* Contact section remains unchanged... */}
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal-500/5 blur-3xl" />
-
         <div className="relative z-10">
-
           <motion.span
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="inline-block rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-700 shadow-sm sm:px-4 sm:py-2 sm:text-xs"
           >
             Let&apos;s work together
           </motion.span>
-
           <motion.h1
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.7,
-              delay: 0.1,
-            }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-5 max-w-5xl text-3xl font-bold tracking-tight text-slate-900 sm:mt-7 sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl"
           >
             Have a{" "}
@@ -515,58 +424,26 @@ const PortfolioPage = () => {
             </span>{" "}
             in mind?
           </motion.h1>
-
           <motion.p
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.7,
-              delay: 0.2,
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
             className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-slate-500 sm:mt-7 sm:text-base sm:leading-8 md:text-lg"
           >
             I&apos;m always interested in learning, building new things, and
             working on interesting ideas.
           </motion.p>
-
-          {/* =================================================
-              CONTACT CIRCLE
-          ================================================== */}
-
           <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.8,
-            }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.8,
-              delay: 0.3,
-            }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
             className="relative mx-auto mt-8 h-52 w-52 sm:mt-10 sm:h-64 sm:w-64 md:h-80 md:w-80 lg:h-96 lg:w-96"
           >
-
             <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-slate-500/10 via-slate-400/10 to-teal-400/10 blur-3xl" />
-
             <motion.svg
-              animate={{
-                rotate: 360,
-              }}
+              animate={{ rotate: 360 }}
               transition={{
                 duration: 15,
                 ease: "linear",
@@ -581,7 +458,6 @@ const PortfolioPage = () => {
                   d="M 150, 150 m -105, 0 a 105,105 0 1,1 210,0 a 105,105 0 1,1 -210,0"
                 />
               </defs>
-
               <text
                 fill="#0f766e"
                 fontSize="13"
@@ -593,9 +469,7 @@ const PortfolioPage = () => {
                 </textPath>
               </text>
             </motion.svg>
-
             <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-slate-600 via-slate-700 to-teal-500 opacity-15 blur-2xl" />
-
             <Link
               href="/contact"
               aria-label="Contact Tufeeq Mushtaq"
