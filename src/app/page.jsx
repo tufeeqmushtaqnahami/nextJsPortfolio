@@ -60,10 +60,11 @@ const Homepage = () => {
             ease: "easeOut",
           }}
           className="
-            flex h-[38%] w-full
-            items-center justify-center
-            lg:h-full lg:w-[42%]
-          "
+  flex h-auto w-full
+  items-center justify-center
+  pt-8
+  lg:h-full lg:w-[42%] lg:pt-0
+"
         >
           {/* ==================== IMAGE WRAPPER ==================== */}
 
@@ -76,14 +77,14 @@ const Homepage = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="
+           className="
   relative
-  h-[160px] w-[160px]
-  sm:h-[195px] sm:w-[195px]
-  md:h-[230px] md:w-[230px]
-  lg:h-[300px] lg:w-[300px]
-  xl:h-[360px] xl:w-[360px]
-  2xl:h-[400px] 2xl:w-[400px]
+  h-[230px] w-[230px]
+  sm:h-[260px] sm:w-[260px]
+  md:h-[290px] md:w-[290px]
+  lg:h-[340px] lg:w-[340px]
+  xl:h-[400px] xl:w-[400px]
+  2xl:h-[440px] 2xl:w-[440px]
 "
           >
             {/* ==================== SOFT GLOW ==================== */}
@@ -132,12 +133,12 @@ const Homepage = () => {
                 fill
                 priority
                 sizes="
-                  (max-width: 640px) 145px,
-                  (max-width: 768px) 175px,
-                  (max-width: 1024px) 205px,
-                  (max-width: 1280px) 275px,
-                  (max-width: 1536px) 330px,
-                  370px
+                  (max-width: 640px) 180px,
+                  (max-width: 768px) 215px,
+                  (max-width: 1024px) 255px,
+                  (max-width: 1280px) 315px,
+                  (max-width: 1536px) 375px,
+                  420px
                 "
                 className="
                   object-cover
@@ -475,6 +476,7 @@ const Homepage = () => {
 
                 <span className="relative z-10 flex items-center gap-2">
                   View My Work
+
                   <span className="transition-transform duration-300 group-hover:translate-x-1">
                     →
                   </span>
@@ -510,6 +512,7 @@ const Homepage = () => {
               >
                 <span className="flex items-center gap-2">
                   Download Resume
+
                   <span className="transition-transform duration-300 group-hover:translate-y-1">
                     ↓
                   </span>
@@ -524,3 +527,4 @@ const Homepage = () => {
 };
 
 export default Homepage;
+
