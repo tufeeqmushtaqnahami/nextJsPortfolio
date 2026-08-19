@@ -67,20 +67,6 @@ const skills = [
     use: "I use Redux Toolkit when application state needs to be shared across multiple components.",
   },
   {
-    name: "Node.js",
-    category: "Backend",
-    description:
-      "Node.js allows JavaScript to run outside the browser.",
-    use: "I use Node.js for backend development, APIs, and server-side logic.",
-  },
-  {
-    name: "Express.js",
-    category: "Backend",
-    description:
-      "Express.js is a lightweight Node.js framework for creating web servers and APIs.",
-    use: "I use Express.js for routing, middleware, and REST API development.",
-  },
-  {
     name: "Firebase",
     category: "Backend / Services",
     description:
@@ -283,7 +269,7 @@ const AboutPage = () => {
               CONTENT
           ==================================================== */}
 
-          <div className="flex w-full flex-col gap-28 px-5 py-20 sm:gap-32 sm:px-8 sm:py-24 md:gap-36 md:px-12 md:py-28 lg:w-2/3 lg:gap-44 lg:px-16 lg:py-32 xl:w-1/2 xl:px-24 2xl:px-32">
+          <div className="flex w-full flex-col gap-16 px-5 py-20 sm:gap-20 sm:px-8 sm:py-24 md:gap-24 md:px-12 md:py-28 lg:w-2/3 lg:gap-28 lg:px-16 lg:py-32 xl:w-1/2 xl:px-24 2xl:px-32">
 
             {/* =================================================
                 BIOGRAPHY
@@ -314,12 +300,12 @@ const AboutPage = () => {
 
                 <div className="relative rounded-full bg-gradient-to-br from-violet-600 via-indigo-500 to-cyan-400 p-[3px] shadow-[0_20px_60px_rgba(124,58,237,0.18)]">
                   <Image
-                    src="/projects/profile1.png"
+                    src="/projects/aboutImage.png"
                     alt="Tufeeq Mushtaq"
-                    width={140}
-                    height={140}
+                    width={260}
+                    height={260}
                     priority
-                    className="h-28 w-28 rounded-full border-2 border-white object-cover transition-transform duration-500 group-hover:scale-105 sm:h-36 sm:w-36"
+                    className="h-36 w-36 rounded-full border-2 border-white object-cover transition-transform duration-500 group-hover:scale-105 sm:h-44 sm:w-44 md:h-52 md:w-52 lg:h-60 lg:w-60 xl:h-64 xl:w-64"
                   />
                 </div>
               </motion.div>
@@ -361,8 +347,8 @@ const AboutPage = () => {
                 <p className="text-base leading-8 text-neutral-600 sm:text-lg">
                   My primary focus is web development, where I work with
                   technologies such as HTML, CSS, JavaScript, React, Next.js,
-                  Tailwind CSS, Redux Toolkit, and Node.js. I also have
-                  experience with Python, APIs, Git, GitHub, and Firebase.
+                  Tailwind CSS, and Redux Toolkit. I also have experience with
+                  Python, APIs, Git, GitHub, and Firebase.
                 </p>
 
                 <p className="text-base leading-8 text-neutral-600 sm:text-lg">
@@ -443,121 +429,6 @@ const AboutPage = () => {
                 <p className="pl-3 text-sm font-medium italic leading-7 text-neutral-600 sm:text-base">
                   &quot;Learn, build, improve, and keep moving forward.&quot;
                 </p>
-              </motion.div>
-
-              {/* =================================================
-                  BETTER SIGNATURE
-              ================================================== */}
-
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                  x: 30,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  x: 0,
-                }}
-                transition={{
-                  delay: 0.7,
-                  duration: 0.8,
-                }}
-                className="flex justify-end pr-2 sm:pr-6"
-              >
-                <div className="relative flex flex-col items-end">
-
-                  {/* Handwritten name */}
-
-                  <div className="relative">
-
-                    <span
-                      className="
-                        relative
-                        block
-                        -rotate-6
-                        bg-gradient-to-r
-                        from-violet-700
-                        via-indigo-600
-                        to-cyan-500
-                        bg-clip-text
-                        text-transparent
-                        text-5xl
-                        font-bold
-                        tracking-tight
-                        sm:text-6xl
-                      "
-                      style={{
-                        fontFamily:
-                          "'Brush Script MT', 'Segoe Script', cursive",
-                      }}
-                    >
-                      Tufeeq
-                    </span>
-
-                    {/* Signature stroke */}
-
-                    <motion.svg
-                      viewBox="0 0 250 45"
-                      className="absolute -bottom-5 -left-8 h-10 w-64"
-                      initial={{
-                        pathLength: 0,
-                        opacity: 0,
-                      }}
-                      animate={{
-                        pathLength: 1,
-                        opacity: 1,
-                      }}
-                      transition={{
-                        delay: 1,
-                        duration: 1.3,
-                        ease: "easeOut",
-                      }}
-                    >
-                      <motion.path
-                        d="M8 31 C55 45, 91 18, 135 27 C168 34, 204 31, 242 10"
-                        fill="none"
-                        stroke="url(#signatureGradient)"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                      />
-
-                      <defs>
-                        <linearGradient
-                          id="signatureGradient"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="0%"
-                        >
-                          <stop
-                            offset="0%"
-                            stopColor="#7c3aed"
-                          />
-
-                          <stop
-                            offset="50%"
-                            stopColor="#6366f1"
-                          />
-
-                          <stop
-                            offset="100%"
-                            stopColor="#06b6d4"
-                          />
-                        </linearGradient>
-                      </defs>
-                    </motion.svg>
-
-                  </div>
-
-                  {/* Full name */}
-
-                  <span className="mt-5 text-[9px] font-semibold uppercase tracking-[0.35em] text-neutral-400">
-                    Tufeeq Mushtaq
-                  </span>
-
-                </div>
               </motion.div>
 
               <ScrollIndicator />
