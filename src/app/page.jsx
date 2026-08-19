@@ -517,7 +517,7 @@ const Homepage = () => {
               {/* ==================== DOWNLOAD RESUME ==================== */}
 
               <a
-                href="/projects/Tufeeq_Mushtaq_Resume.pdf"
+                href="/projects/Tufeeq.Resume.pdf"
                 download
                 className="
                   group
