@@ -1,9 +1,8 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
 
 const items = [
   {
@@ -18,13 +17,13 @@ const items = [
   },
   {
     id: 2,
-    title: "To-Do App",
-    desc: "A task management application built to practice CRUD operations, JavaScript state management, user interactions, and creating a simple and useful interface.",
-    img: "/projects/todo.png",
-    link: "https://to-do-app-omega-blush.vercel.app/",
-    github: "https://github.com/tufeeqmushtaqnahami/To-Do-App",
-    tags: ["HTML", "CSS", "JavaScript", "CRUD"],
-    accent: "blue",
+    title: "Climate Cast",
+    desc: "A weather application that uses a weather API to display current weather information based on a location. It provides useful weather details through a clean and responsive interface.",
+    img: "/projects/climate-cast.png",
+    link: "https://weather-app-ten-jet-91.vercel.app/",
+    github: "https://github.com/tufeeqmushtaqnahami/Weather-App",
+    tags: ["HTML", "CSS", "JavaScript", "Weather API"],
+    accent: "indigo",
   },
   {
     id: 3,
@@ -38,13 +37,13 @@ const items = [
   },
   {
     id: 4,
-    title: "Climate Cast",
-    desc: "A weather application that uses a weather API to display current weather information based on a location. It provides useful weather details through a clean and responsive interface.",
-    img: "/projects/climate-cast.png",
-    link: "https://weather-app-ten-jet-91.vercel.app/",
-    github: "https://github.com/tufeeqmushtaqnahami/Weather-App",
-    tags: ["HTML", "CSS", "JavaScript", "Weather API"],
-    accent: "indigo",
+    title: "To-Do App",
+    desc: "A task management application built to practice CRUD operations, JavaScript state management, user interactions, and creating a simple and useful interface.",
+    img: "/projects/todo.png",
+    link: "https://to-do-app-omega-blush.vercel.app/",
+    github: "https://github.com/tufeeqmushtaqnahami/To-Do-App",
+    tags: ["HTML", "CSS", "JavaScript", "CRUD"],
+    accent: "blue",
   },
   {
     id: 5,
@@ -60,46 +59,34 @@ const items = [
 
 const accentStyles = {
   violet: {
-    background: "from-slate-700 via-slate-800 to-slate-950",
-    badge: "border-slate-300/20 bg-slate-500/10 text-slate-200",
-    glow: "bg-slate-500/15",
+    background: "from-[#111827] via-[#172033] to-[#0b1120]",
+    badge: "border-violet-300/20 bg-violet-400/10 text-violet-100",
+    glow: "bg-violet-500/10",
   },
 
   blue: {
-    background: "from-slate-700 via-slate-800 to-slate-950",
-    badge: "border-slate-300/20 bg-slate-500/10 text-slate-200",
-    glow: "bg-slate-500/15",
+    background: "from-[#101827] via-[#162236] to-[#0a111f]",
+    badge: "border-blue-300/20 bg-blue-400/10 text-blue-100",
+    glow: "bg-blue-500/10",
   },
 
   cyan: {
-    background: "from-slate-800 via-slate-900 to-slate-950",
-    badge: "border-teal-300/20 bg-teal-500/10 text-teal-200",
-    glow: "bg-teal-500/10",
+    background: "from-[#0d1b20] via-[#10262c] to-[#09151a]",
+    badge: "border-cyan-300/20 bg-cyan-400/10 text-cyan-100",
+    glow: "bg-cyan-500/10",
   },
 
   indigo: {
-    background: "from-slate-700 via-slate-800 to-slate-950",
-    badge: "border-slate-300/20 bg-slate-500/10 text-slate-200",
-    glow: "bg-slate-500/15",
+    background: "from-[#111526] via-[#171d35] to-[#0a0f1f]",
+    badge: "border-indigo-300/20 bg-indigo-400/10 text-indigo-100",
+    glow: "bg-indigo-500/10",
   },
 };
 
 const PortfolioPage = () => {
-  const ref = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-  });
-
-  const x = useTransform(
-    scrollYProgress,
-    [0.16, 1],
-    ["0%", `-${(items.length * 100) / (items.length + 1)}%`]
-  );
-
   return (
     <motion.main
-      className="h-full bg-white text-neutral-900"
+      className="min-h-screen w-full overflow-x-hidden bg-[#080b12] text-white"
       initial={{ y: "-100vh" }}
       animate={{ y: "0%" }}
       transition={{
@@ -108,30 +95,39 @@ const PortfolioPage = () => {
       }}
     >
       {/* =====================================================
-          PROJECT SECTION
+          MY WORKS INTRO
       ====================================================== */}
 
-      {/* Added max-md:!h-auto to override the inline height style on mobile */}
-      <section
-        ref={ref}
-        className="relative max-md:!h-auto"
-        style={{
-          height: `${(items.length + 1) * 100}dvh`,
-        }}
-      >
-        {/* =================================================
-            INTRO
-        ================================================== */}
+      <section className="relative flex min-h-dvh w-full items-center justify-center overflow-hidden bg-[#080b12] px-5 text-center sm:px-6">
+        {/* Premium background */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute left-[-15%] top-[-10%] h-125 w-125 rounded-full bg-slate-500/10 blur-[120px]" />
 
-        <div className="flex h-[calc(100dvh-5rem)] min-h-[520px] w-screen flex-col items-center justify-center px-5 text-center sm:px-6">
+          <div className="absolute bottom-[-15%] right-[-10%] h-137.5 w-137.5 rounded-full bg-teal-500/10 blur-[130px]" />
+
+          <div className="absolute left-1/2 top-1/2 h-175 w-175 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/3.5 blur-[150px]" />
+
+          <div
+            className="absolute inset-0 opacity-[0.035]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+              backgroundSize: "55px 55px",
+              maskImage:
+                "linear-gradient(to bottom, black, transparent 80%)",
+            }}
+          />
+        </div>
+
+        <div className="relative z-10 flex w-full max-w-5xl flex-col items-center justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-3 sm:mb-5"
+            className="mb-5"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-700 sm:px-4 sm:py-2 sm:text-xs">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-teal-600" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/4 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-300 shadow-lg backdrop-blur-md sm:text-xs">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-teal-400" />
               My Portfolio
             </span>
           </motion.div>
@@ -140,7 +136,7 @@ const PortfolioPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-3 text-sm text-neutral-500 sm:mb-4 sm:text-base md:text-lg"
+            className="mb-4 text-sm text-slate-400 sm:text-base md:text-lg"
           >
             A collection of things I&apos;ve built
           </motion.p>
@@ -151,7 +147,7 @@ const PortfolioPage = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
           >
-            <span className="bg-gradient-to-r from-slate-700 via-slate-800 to-teal-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-white via-slate-200 to-teal-300 bg-clip-text text-transparent">
               My Works
             </span>
           </motion.h1>
@@ -160,8 +156,18 @@ const PortfolioPage = () => {
             initial={{ width: 0 }}
             animate={{ width: 80 }}
             transition={{ delay: 0.9, duration: 0.6 }}
-            className="mt-5 h-1 rounded-full bg-gradient-to-r from-slate-700 to-teal-600 sm:mt-7"
+            className="mt-6 h-1 rounded-full bg-linear-to-r from-slate-300 to-teal-400"
           />
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.1, duration: 0.7 }}
+            className="mt-7 max-w-xl text-sm leading-6 text-slate-500 sm:text-base sm:leading-7"
+          >
+            Explore a selection of projects where I&apos;ve combined
+            design, development, APIs, and modern web technologies.
+          </motion.p>
 
           <motion.div
             animate={{ y: [0, 8, 0], opacity: [0.4, 1, 0.4] }}
@@ -170,238 +176,247 @@ const PortfolioPage = () => {
               duration: 2.5,
               ease: "easeInOut",
             }}
-            className="mt-8 flex flex-col items-center gap-2 sm:mt-12"
+            className="mt-10 flex flex-col items-center gap-2 sm:mt-14"
           >
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-400">
+            <span className="text-[10px] font-medium uppercase tracking-[0.25em] text-slate-500 sm:text-xs">
               Scroll
             </span>
-            <span className="h-10 w-0.5 rounded-full bg-gradient-to-b from-slate-600 to-teal-500" />
+
+            <span className="h-10 w-px rounded-full bg-linear-to-b from-slate-500 to-teal-400" />
           </motion.div>
         </div>
+      </section>
 
-        {/* =================================================
-            PROJECT PROGRESS
-        ================================================== */}
+      {/* =====================================================
+          PROJECTS SECTION
+      ====================================================== */}
 
-        {/* Changed hidden sm:flex to hidden md:flex so it only shows on laptop */}
-        <div className="pointer-events-none absolute left-1/2 top-[calc(100dvh-5.5rem)] z-30 hidden -translate-x-1/2 items-center gap-3 md:flex">
-          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-neutral-400">
-            Selected work
-          </span>
-          <div className="h-px w-16 bg-gradient-to-r from-slate-600 to-teal-500" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-neutral-400">
-            {String(items.length).padStart(2, "0")} projects
-          </span>
+      <section className="relative w-full overflow-hidden bg-[#0a0f18]">
+        {/* Overall project background */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-[-10%] top-[10%] h-125 w-125 rounded-full bg-indigo-500/4.5 blur-[140px]" />
+
+          <div className="absolute right-[-10%] top-[35%] h-137.5 w-137.5 rounded-full bg-teal-500/4.5 blur-[150px]" />
+
+          <div className="absolute bottom-[5%] left-[20%] h-112.5 w-112.5 rounded-full bg-blue-500/3.5 blur-[140px]" />
+        </div>
+
+        {/* Project intro */}
+        <div className="relative flex min-h-[75dvh] w-full items-center justify-center overflow-hidden bg-linear-to-br from-[#0b1220] via-[#101827] to-[#080d17] px-5 text-center sm:px-6">
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute left-[-10%] top-[-20%] h-96 w-96 rounded-full bg-indigo-500/10 blur-[110px]" />
+
+            <div className="absolute bottom-[-15%] right-[-10%] h-96 w-96 rounded-full bg-teal-500/10 blur-[110px]" />
+
+            <div
+              className="absolute inset-0 opacity-[0.035]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
+                backgroundSize: "48px 48px",
+              }}
+            />
+          </div>
+
+          <div className="relative z-10">
+            <span className="mb-5 inline-block text-[10px] font-semibold uppercase tracking-[0.3em] text-teal-300/70 sm:mb-6 sm:text-xs">
+              Featured Projects
+            </span>
+
+            <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-7xl lg:text-8xl">
+              Selected
+              <br />
+              <span className="bg-linear-to-r from-slate-100 via-white to-teal-300 bg-clip-text text-transparent">
+                Projects
+              </span>
+            </h2>
+
+            <div className="mx-auto mt-6 h-px w-20 bg-linear-to-r from-transparent via-teal-400 to-transparent" />
+
+            <p className="mx-auto mt-6 max-w-xl text-sm leading-6 text-slate-400 sm:text-base sm:leading-7">
+              A closer look at some of the projects I&apos;ve designed and
+              developed.
+            </p>
+
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.8,
+                ease: "easeInOut",
+              }}
+              className="mt-9 flex justify-center text-3xl text-teal-300 md:hidden"
+            >
+              ↓
+            </motion.div>
+
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.8,
+                ease: "easeInOut",
+              }}
+              className="mt-9 hidden justify-center text-2xl text-teal-300 md:flex"
+            >
+              ↓
+            </motion.div>
+          </div>
         </div>
 
         {/* =================================================
-            SCROLL CONTAINER (Vertical Mobile / Horizontal Desktop)
+            PROJECT CARDS
         ================================================== */}
 
-        {/* Disabled sticky and h-screen on mobile so it flows normally */}
-        <div className="max-md:relative md:sticky md:top-0 flex max-md:h-auto md:h-screen items-center md:overflow-hidden">
-          
-          {/* Changed flex row to flex column on mobile, and disabled the X transform using CSS! */}
-          <motion.div
-            style={{ x }}
-            className="flex max-md:w-full max-md:flex-col max-md:!transform-none"
-          >
-            {/* =================================================
-                PROJECT INTRO
-            ================================================== */}
+        <div className="relative w-full">
+          {items.map((item, index) => {
+            const accent = accentStyles[item.accent];
 
-            <div className="relative flex min-h-[100dvh] md:h-screen w-screen shrink-0 items-center justify-center overflow-hidden bg-slate-950 px-5 text-white sm:px-6">
-              <div className="absolute -left-20 top-20 h-80 w-80 rounded-full bg-slate-500/15 blur-3xl" />
-              <div className="absolute -bottom-20 right-0 h-96 w-96 rounded-full bg-teal-500/10 blur-3xl" />
+            return (
+              <div
+                key={item.id}
+                className={`relative flex min-h-dvh w-full items-center justify-center overflow-hidden bg-linear-to-br ${accent.background} px-4 py-16 text-white sm:px-6 sm:py-20 md:px-12 md:py-24 lg:px-16 xl:px-24`}
+              >
+                {/* Ambient background glows */}
+                <div
+                  className={`pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full ${accent.glow} blur-[100px]`}
+                />
 
-              <div className="relative z-10 text-center">
-                <span className="mb-4 inline-block text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-300 sm:mb-5 sm:text-xs">
-                  Explore
+                <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-white/2.5 blur-[100px]" />
+
+                {/* Subtle grid */}
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-[0.035]"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)",
+                    backgroundSize: "55px 55px",
+                    maskImage:
+                      "linear-gradient(to bottom, black, transparent 90%)",
+                  }}
+                />
+
+                {/* Large project number */}
+                <span className="pointer-events-none absolute left-4 top-10 select-none text-7xl font-bold tracking-tighter text-white/3.5 sm:left-8 sm:top-16 sm:text-8xl md:left-16 md:text-9xl">
+                  {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-7xl lg:text-8xl">
-                  Selected
-                  <br />
-                  <span className="bg-gradient-to-r from-slate-300 via-slate-200 to-teal-300 bg-clip-text text-transparent">
-                    Projects
-                  </span>
-                </h2>
+                {/* Project content */}
+                <div className="relative z-10 flex w-full max-w-375 flex-col items-center justify-center gap-10 md:grid md:grid-cols-2 md:gap-12 lg:gap-16 xl:gap-24">
+                  {/* IMAGE */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false, amount: 0.25 }}
+                    transition={{ duration: 0.7 }}
+                    className="order-1 w-full"
+                  >
+                    <div className="group relative mx-auto w-full max-w-[94vw] sm:max-w-180 md:max-w-162.5 lg:max-w-175">
+                      <div
+                        className={`absolute -inset-5 rounded-4xl ${accent.glow} opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100`}
+                      />
 
-                <p className="mt-5 text-sm text-neutral-400 sm:mt-6 sm:text-lg">
-                  Scroll down to explore my work
-                </p>
-
-                <motion.div
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 1.8,
-                    ease: "easeInOut",
-                  }}
-                  className="mt-8 flex justify-center text-3xl text-teal-300 sm:mt-10 md:hidden"
-                >
-                  ↓
-                </motion.div>
-                <motion.div
-                  animate={{ x: [0, 10, 0] }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 1.8,
-                    ease: "easeInOut",
-                  }}
-                  className="mt-8 hidden text-3xl text-teal-300 sm:mt-10 md:block"
-                >
-                  →
-                </motion.div>
-              </div>
-            </div>
-
-            {/* =================================================
-                PROJECTS
-            ================================================== */}
-
-            {items.map((item, index) => {
-              const accent = accentStyles[item.accent];
-
-              return (
-                <div
-                  key={item.id}
-                  className={`relative flex min-h-[100dvh] md:h-dvh w-screen shrink-0 items-center justify-center overflow-hidden bg-gradient-to-br ${accent.background} px-4 py-16 text-white sm:px-6 sm:py-20 md:min-h-0 md:px-12 md:py-20 lg:px-16 xl:px-24`}
-                >
-                  {/* Background glow */}
-                  <div
-                    className={`absolute -right-32 -top-32 h-96 w-96 rounded-full ${accent.glow} blur-3xl`}
-                  />
-                  <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
-
-                  {/* Background grid */}
-                  <div
-                    className="pointer-events-none absolute inset-0 opacity-[0.08]"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.18) 1px, transparent 1px)",
-                      backgroundSize: "42px 42px",
-                      maskImage:
-                        "linear-gradient(to bottom, black, transparent 80%)",
-                    }}
-                  />
-
-                  {/* Project number */}
-                  <span className="absolute left-4 top-16 text-6xl font-bold text-white/5 sm:left-8 sm:top-20 sm:text-8xl md:left-16 lg:text-9xl">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-
-                  {/* CONTENT */}
-                  <div className="relative z-10 flex w-full max-w-[1500px] flex-col items-center justify-center gap-8 md:grid md:grid-cols-2 md:gap-12 lg:gap-16 xl:gap-24">
-                    {/* IMAGE */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -60 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: false, amount: 0.3 }}
-                      transition={{ duration: 0.7 }}
-                      className="order-1 w-full md:order-1"
-                    >
-                      <div className="group relative mx-auto w-full max-w-[94vw] sm:max-w-[720px] md:max-w-[650px] lg:max-w-[700px]">
-                        <div
-                          className={`absolute -inset-4 rounded-3xl ${accent.glow} opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100`}
+                      <div className="relative aspect-16/10 w-full overflow-hidden rounded-2xl border border-white/10 bg-black/30 shadow-[0_25px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm transition-all duration-500 group-hover:border-white/20 sm:aspect-video sm:rounded-3xl">
+                        <Image
+                          src={item.img}
+                          alt={`${item.title} project preview`}
+                          fill
+                          sizes="(max-width: 640px) 94vw, (max-width: 1024px) 78vw, 48vw"
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
-                        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/15 bg-black/20 shadow-2xl backdrop-blur-sm transition-all duration-500 group-hover:border-white/30 sm:aspect-video sm:rounded-3xl">
-                          <Image
-                            src={item.img}
-                            alt={`${item.title} project preview`}
-                            fill
-                            sizes="(max-width: 640px) 94vw, (max-width: 1024px) 78vw, 48vw"
-                            className="object-cover transition-transform duration-700 group-hover:scale-105"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60" />
-                          <div className="absolute bottom-3 left-3 rounded-full border border-white/20 bg-black/30 px-3 py-1.5 text-[10px] font-medium text-white backdrop-blur-md sm:bottom-4 sm:left-4 sm:text-xs">
-                            Project Preview
-                          </div>
+
+                        <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-70" />
+
+                        <div className="absolute bottom-3 left-3 rounded-full border border-white/10 bg-black/35 px-3 py-1.5 text-[10px] font-medium text-white backdrop-blur-xl sm:bottom-4 sm:left-4 sm:text-xs">
+                          Project Preview
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
+                  </motion.div>
 
-                    {/* PROJECT DETAILS */}
-                    <motion.div
-                      initial={{ opacity: 0, x: 60 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: false, amount: 0.3 }}
-                      transition={{ duration: 0.7, delay: 0.1 }}
-                      className="order-2 w-full text-center md:order-2 md:max-w-xl md:text-left"
-                    >
-                      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-white/50 sm:mb-3 sm:text-xs">
-                        Project {String(index + 1).padStart(2, "0")}
-                      </p>
+                  {/* PROJECT DETAILS */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false, amount: 0.25 }}
+                    transition={{ duration: 0.7, delay: 0.1 }}
+                    className="order-2 w-full text-center md:max-w-xl md:text-left"
+                  >
+                    <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-white/40 sm:text-xs">
+                      Project {String(index + 1).padStart(2, "0")}
+                    </p>
 
-                      <h2 className="mx-auto max-w-3xl text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:mx-0 md:text-4xl lg:text-5xl xl:text-6xl">
-                        {item.title}
-                      </h2>
+                    <h2 className="mx-auto max-w-3xl text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:mx-0 md:text-5xl lg:text-6xl">
+                      {item.title}
+                    </h2>
 
-                      <div className="mx-auto mt-3 h-1 w-12 rounded-full bg-gradient-to-r from-white to-white/30 sm:mt-5 md:mx-0 md:w-14" />
+                    <div className="mx-auto mt-4 h-px w-14 bg-linear-to-r from-white/70 to-transparent md:mx-0 md:w-16" />
 
-                      <p className="mx-auto mt-4 max-w-2xl text-xs leading-5 text-white/75 sm:text-sm sm:leading-6 md:mx-0 md:mt-6 md:text-base lg:text-lg lg:leading-8">
-                        {item.desc}
-                      </p>
+                    <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-white/65 sm:text-base sm:leading-7 md:mx-0 md:mt-6 md:text-lg md:leading-8">
+                      {item.desc}
+                    </p>
 
-                      {/* TECHNOLOGIES */}
-                      <p className="mt-5 text-[10px] font-bold uppercase tracking-[0.22em] text-white/45 md:mt-7 md:text-xs">
-                        Built with
-                      </p>
+                    {/* TECHNOLOGIES */}
+                    <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.22em] text-white/35 md:mt-8 md:text-xs">
+                      Built with
+                    </p>
 
-                      <div className="mt-2 flex max-w-xl flex-wrap justify-center gap-2 md:justify-start">
-                        {item.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className={`rounded-full border px-3 py-1.5 text-xs font-medium backdrop-blur-sm ${accent.badge}`}
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* BUTTONS */}
-                      <div className="mt-5 flex flex-wrap justify-center gap-3 md:mt-8 md:justify-start">
-                        <Link
-                          href={item.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`Open live demo for ${item.title}`}
-                          className="group/button inline-flex min-h-11 items-center gap-3 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                    <div className="mt-3 flex max-w-xl flex-wrap justify-center gap-2 md:justify-start">
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className={`rounded-full border px-3 py-1.5 text-xs font-medium backdrop-blur-sm ${accent.badge}`}
                         >
-                          <span>Live Demo</span>
-                          <span className="transition-transform duration-300 group-hover/button:translate-x-1">
-                            ↗
-                          </span>
-                        </Link>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
 
-                        <Link
-                          href={item.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`Open GitHub repository for ${item.title}`}
-                          className="group/github inline-flex min-h-11 items-center gap-3 rounded-xl border border-white/25 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/50 hover:bg-white/20"
-                        >
-                          <span>GitHub</span>
-                          <span className="transition-transform duration-300 group-hover/github:translate-x-1">
-                            ↗
-                          </span>
-                        </Link>
-                      </div>
-                    </motion.div>
-                  </div>
+                    {/* BUTTONS */}
+                    <div className="mt-6 flex flex-wrap justify-center gap-3 md:mt-8 md:justify-start">
+                      <Link
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open live demo for ${item.title}`}
+                        className="group/button inline-flex min-h-11 items-center gap-3 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                      >
+                        <span>Live Demo</span>
+
+                        <span className="transition-transform duration-300 group-hover/button:translate-x-1">
+                          ↗
+                        </span>
+                      </Link>
+
+                      <Link
+                        href={item.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open GitHub repository for ${item.title}`}
+                        className="group/github inline-flex min-h-11 items-center gap-3 rounded-xl border border-white/15 bg-white/6 px-5 py-3 text-sm font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-white/10"
+                      >
+                        <span>GitHub</span>
+
+                        <span className="transition-transform duration-300 group-hover/github:translate-x-1">
+                          ↗
+                        </span>
+                      </Link>
+                    </div>
+                  </motion.div>
                 </div>
-              );
-            })}
-          </motion.div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
       {/* =====================================================
           CONTACT CTA
       ====================================================== */}
-      <section className="relative flex min-h-screen w-screen flex-col items-center justify-center overflow-hidden bg-slate-50 px-5 py-20 text-center sm:px-6 sm:py-24">
-        {/* Contact section remains unchanged... */}
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal-500/5 blur-3xl" />
+
+      <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#f5f7fa] px-5 py-20 text-center sm:px-6 sm:py-24">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal-500/5 blur-3xl" />
+
         <div className="relative z-10">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -411,6 +426,7 @@ const PortfolioPage = () => {
           >
             Let&apos;s work together
           </motion.span>
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -419,11 +435,12 @@ const PortfolioPage = () => {
             className="mt-5 max-w-5xl text-3xl font-bold tracking-tight text-slate-900 sm:mt-7 sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl"
           >
             Have a{" "}
-            <span className="bg-gradient-to-r from-slate-700 via-slate-800 to-teal-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-slate-700 via-slate-800 to-teal-600 bg-clip-text text-transparent">
               project
             </span>{" "}
             in mind?
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -434,6 +451,7 @@ const PortfolioPage = () => {
             I&apos;m always interested in learning, building new things, and
             working on interesting ideas.
           </motion.p>
+
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -441,7 +459,8 @@ const PortfolioPage = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative mx-auto mt-8 h-52 w-52 sm:mt-10 sm:h-64 sm:w-64 md:h-80 md:w-80 lg:h-96 lg:w-96"
           >
-            <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-slate-500/10 via-slate-400/10 to-teal-400/10 blur-3xl" />
+            <div className="absolute -inset-6 rounded-full bg-linear-to-r from-slate-500/10 via-slate-400/10 to-teal-400/10 blur-3xl" />
+
             <motion.svg
               animate={{ rotate: 360 }}
               transition={{
@@ -458,6 +477,7 @@ const PortfolioPage = () => {
                   d="M 150, 150 m -105, 0 a 105,105 0 1,1 210,0 a 105,105 0 1,1 -210,0"
                 />
               </defs>
+
               <text
                 fill="#0f766e"
                 fontSize="13"
@@ -469,7 +489,9 @@ const PortfolioPage = () => {
                 </textPath>
               </text>
             </motion.svg>
-            <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-slate-600 via-slate-700 to-teal-500 opacity-15 blur-2xl" />
+
+            <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-r from-slate-600 via-slate-700 to-teal-500 opacity-15 blur-2xl" />
+
             <Link
               href="/contact"
               aria-label="Contact Tufeeq Mushtaq"

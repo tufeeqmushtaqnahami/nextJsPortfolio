@@ -147,7 +147,7 @@ const Homepage = () => {
               "
             >
               <Image
-                src="/projects/profile1.png"
+                src="/projects/profile3.png"
                 alt="Tufeeq Mushtaq"
                 fill
                 priority

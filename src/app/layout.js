@@ -91,7 +91,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={jakarta.variable}>
+    <html
+  lang="en"
+  className={jakarta.variable}
+  data-scroll-behavior="smooth"
+>
       <body className="font-sans antialiased">
         <TransitionProvider>
           {children}

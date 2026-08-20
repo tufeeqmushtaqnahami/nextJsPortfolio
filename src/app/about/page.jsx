@@ -322,7 +322,7 @@ const AboutPage = () => {
 
                 <div className="relative rounded-full bg-linear-to-br from-slate-700 via-slate-800 to-teal-600 p-0.75 shadow-[0_20px_60px_rgba(15,118,110,0.14)]">
                   <Image
-                    src="/projects/aboutImage.png"
+                    src="/projects/profile1.png"
                     alt="Tufeeq Mushtaq"
                     width={260}
                     height={260}
