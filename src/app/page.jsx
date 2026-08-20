@@ -37,11 +37,11 @@ const Homepage = () => {
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {/* Slate glow */}
 
-        <div className="absolute -left-32 top-1/3 h-64 w-64 rounded-full bg-slate-500/[0.05] blur-3xl sm:h-80 sm:w-80" />
+        <div className="absolute -left-32 top-1/3 h-64 w-64 rounded-full bg-slate-500/5 blur-3xl sm:h-80 sm:w-80" />
 
         {/* Teal glow */}
 
-        <div className="absolute -bottom-32 right-0 h-72 w-72 rounded-full bg-teal-500/[0.05] blur-3xl sm:h-96 sm:w-96" />
+        <div className="absolute -bottom-32 right-0 h-72 w-72 rounded-full bg-teal-500/5 blur-3xl sm:h-96 sm:w-96" />
       </div>
 
       {/* ==================== MAIN CONTAINER ==================== */}
@@ -98,12 +98,12 @@ const Homepage = () => {
             }}
             className="
               relative
-              h-[230px] w-[230px]
-              sm:h-[260px] sm:w-[260px]
-              md:h-[290px] md:w-[290px]
-              lg:h-[340px] lg:w-[340px]
-              xl:h-[400px] xl:w-[400px]
-              2xl:h-[440px] 2xl:w-[440px]
+              h-57.5 w-57.5
+              sm:h-65 sm:w-65
+              md:h-72.5 md:w-72.5
+              lg:h-85 lg:w-85
+              xl:h-100 xl:w-100
+              2xl:h-110 2xl:w-110
             "
           >
             {/* ==================== SOFT GLOW ==================== */}
@@ -112,7 +112,7 @@ const Homepage = () => {
               className="
                 absolute -inset-5
                 rounded-full
-                bg-gradient-to-r
+                bg-linear-to-r
                 from-slate-500/15
                 via-slate-400/10
                 to-teal-400/15
@@ -124,9 +124,9 @@ const Homepage = () => {
 
             <div
               className="
-                absolute -inset-[3px]
+                absolute -inset-0.75
                 rounded-full
-                bg-gradient-to-br
+                bg-linear-to-br
                 from-slate-700
                 via-slate-800
                 to-teal-600
@@ -137,10 +137,10 @@ const Homepage = () => {
 
             <div
               className="
-                absolute inset-[4px]
+                absolute inset-1
                 overflow-hidden
                 rounded-full
-                border-[4px]
+                border-4
                 border-white
                 bg-white
                 shadow-[0_20px_55px_rgba(15,23,42,0.14)]
@@ -258,8 +258,7 @@ const Homepage = () => {
             xl:pl-12
           "
         >
-          <div className="w-full max-w-[620px] min-w-0">
-
+          <div className="w-full max-w-155 min-w-0">
             {/* ==================== LABEL ==================== */}
 
             <motion.div
@@ -334,7 +333,7 @@ const Homepage = () => {
               Hi, I&apos;m{" "}
               <span
                 className="
-                  bg-gradient-to-r
+                  bg-linear-to-r
                   from-slate-700
                   via-slate-800
                   to-teal-600
@@ -419,7 +418,7 @@ const Homepage = () => {
               className="
                 mx-auto
                 mt-3
-                max-w-[570px]
+                max-w-142.5
                 text-[11px]
                 leading-5
                 text-slate-500
@@ -495,7 +494,7 @@ const Homepage = () => {
                     absolute
                     inset-0
                     -translate-x-full
-                    bg-gradient-to-r
+                    bg-linear-to-r
                     from-slate-700
                     via-slate-800
                     to-teal-600
@@ -559,4 +558,3 @@ const Homepage = () => {
 };
 
 export default Homepage;
-
