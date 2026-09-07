@@ -85,15 +85,7 @@ const accentStyles = {
 
 const PortfolioPage = () => {
   return (
-    <motion.main
-      className="min-h-screen w-full overflow-x-hidden bg-[#080b12] text-white"
-      initial={{ y: "-100vh" }}
-      animate={{ y: "0%" }}
-      transition={{
-        duration: 0.9,
-        ease: "easeOut",
-      }}
-    >
+    <main className="min-h-screen w-full overflow-x-hidden bg-[#080b12] text-white">
       {/* =====================================================
           MY WORKS INTRO
       ====================================================== */}
@@ -504,7 +496,7 @@ const PortfolioPage = () => {
           </motion.div>
         </div>
       </section>
-    </motion.main>
+    </main>
   );
 };
 

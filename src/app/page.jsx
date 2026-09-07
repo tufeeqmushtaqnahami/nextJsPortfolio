@@ -306,50 +306,50 @@ const Homepage = () => {
             {/* ==================== TITLE ==================== */}
 
             <motion.h1
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                delay: 0.55,
-                duration: 0.7,
-              }}
-              className="
-                text-[2rem]
-                font-extrabold
-                leading-[1.04]
-                tracking-tight
-                sm:text-[2.5rem]
-                md:text-[3rem]
-                lg:text-[3.1rem]
-                xl:text-[3.7rem]
-                2xl:text-[4.1rem]
-              "
-            >
-              Hi, I&apos;m{" "}
-              <span
-                className="
-                  bg-linear-to-r
-                  from-slate-700
-                  via-slate-800
-                  to-teal-600
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                Tufeeq Mushtaq.
-              </span>
+  initial={{
+    opacity: 0,
+    y: 20,
+  }}
+  animate={{
+    opacity: 1,
+    y: 0,
+  }}
+  transition={{
+    delay: 0.55,
+    duration: 0.7,
+  }}
+  className="
+    text-[2rem]
+    font-extrabold
+    leading-[1.04]
+    tracking-tight
+    sm:text-[2.5rem]
+    md:text-[3rem]
+    lg:text-[3.1rem]
+    xl:text-[3.7rem]
+    2xl:text-[4.1rem]
+  "
+>
+  Hi, I&apos;m{" "}
+  <span
+    className="
+      bg-linear-to-r
+      from-slate-700
+      via-slate-800
+      to-teal-600
+      bg-clip-text
+      text-transparent
+    "
+  >
+    Tufeeq Mushtaq.
+  </span>
 
-              <br />
+  <br />
 
-              <span className="text-slate-900">
-                I Build for the Web.
-              </span>
-            </motion.h1>
+  <span className="text-[1.2rem] font-semibold text-slate-700 sm:text-[1.4rem] md:text-[1.7rem] lg:text-[1.8rem] xl:text-[2.1rem] 2xl:text-[2.3rem]">
+    I Build for the Web.
+  </span>
+</motion.h1>
 
             {/* ==================== ROLE ==================== */}
 
